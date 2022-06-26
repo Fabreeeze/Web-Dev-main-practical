@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact Us Form</title>
+<title>Web Dev Final</title>
 <meta charset="utf-8"/>
 <style>
 body{
-	background:linear-gradient(to bottom right, #33ccff 13%, #ff99cc 84%);
+	
+    background: linear-gradient(to bottom right, #13ccff 7%, #ff99cc 84%);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    -o-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
 }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+
 #ansHere{
 background-color:white;}
 .toppane{
@@ -34,7 +63,7 @@ ul li:hover{
 	background-color:yellow;
 	color:black;
 	box-shadow:10px 10px 10px 10px;
-	transform:translatey(2px);
+	transform:translatey(5px);
 }
 ul li .navlist{
 	display:none;
@@ -72,19 +101,15 @@ ul li #homeButton{
 	background-color: inherit;
 	font-size:inherit;
 	color:inherit;
+	text-decoration:none;
 }
 #showpaneTitle{
 	font-size:40px;
-	text-align:center;
-	color:red;
-	
+	text-align:center;	
 }
 </style>
 <script>
-function homeButtonSrc()
-{
-document.getElementById("ansHere").src="showpane.html";
-}
+
 function changeTitle(x){
 document.getElementById("showpaneTitle").innerHTML=x;
 }
@@ -93,7 +118,7 @@ document.getElementById("showpaneTitle").innerHTML=x;
 </head>
 <body>
 <div class="toppane">
-	Web Development Practicals
+	<b>Web Development Practicals</b>
 	<a href="mailto::abc@gmail.com"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/gmail.png" height="40px" height="40px"></a>
 	<a href="#"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/linkedin.png" height="40px" height="40px"></a>
 	<!--<a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
@@ -103,7 +128,7 @@ document.getElementById("showpaneTitle").innerHTML=x;
 <div class="navbar">
 <ul>
 	<li>
-	<button id="homeButton" onClick="homeButtonSrc(),changeTitle('Home Page')" >Home</button>
+	<a href="showpane.html" id="homeButton"	onclick="changeTitle('Home Page')" target="ansHere">Home</a>
 	</li>
 	<li>Practical 1
 		<div class="navlist">
@@ -169,7 +194,8 @@ document.getElementById("showpaneTitle").innerHTML=x;
 	</li>
 	<li>Practical 8
 		<div class="navlist">
-			<a href="#">Output</a>
+			<a href="file:///C:/Users/Hp/Desktop/data structure/linked lists/linked_lists_1.c" 
+				onclick="changeTitle('Practical 8 Output')" target="ansHere">Output</a>
 			<a href="#">Html Code</a>
 			<a href="#">Css Code</a>
 		</div>
@@ -179,9 +205,9 @@ document.getElementById("showpaneTitle").innerHTML=x;
 <br>
 <br>
 <br>
-<br>
+
 <div class="showpane">
-<p id="showpaneTitle">Home Page</p>
+<p id="showpaneTitle"><b>Home Page</b></p>
 
 <iframe src="showpane.html" id="ansHere" name="ansHere" width="100%" height="1200px" style="z-index:2;">
 </iframe>
