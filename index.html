@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Dev Final</title>
+<meta charset="utf-8"/>
 
+<style>
+body{
+	
+    background: linear-gradient(to bottom right, #13ccff 7%, #ff99cc 84%);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    -o-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:62% 0%}
+    50%{background-position:39% 100%}
+    100%{background-position:62% 0%}
+}
+
+#ansHere{
+background-color:white;}
+.toppane{
+	margin:10px;
+	padding:20px;
+	font-size:40px;
+}
+.toppane a{
+	float:right;
+	margin:10px;
+	background: linear-gradient(to bottom, #ffffff 65%, rgba(161,177,228) 78%);
+}
+ul{list-style:none;
+padding-left:10px;
+}
+ul li{
+	display:inline-block;
+	background-color:green;
+	color:white;
+	font-size:30px;
+	float:left;
+	padding:19px;
+}
+ul li:hover{
+	background-color:yellow;
+	color:black;
+	box-shadow:10px 10px 10px 10px;
+	transform:translatey(5px);
+}
+ul li .navlist{
+	display:none;
+	position: absolute;
+}
+ul li .navlist a{
+	display:block;
+	border-radius:10px;
+	background-color:lightblue;
+	padding:15px;
+	z-index: 100;
+	color: black;	
+	box-shadow:4px 4px 4px 4px;
+}
+ul li:hover .navlist{
+	display:block;	
+}
+ul li .navlist a:hover{
+	border-radius:10px;
+	background-color: white;
+	color:red;
+	transform:translatey(4px);
+	box-shadow:8px 10px 8px 10px rgba(0,0,0,1);
+}
+.showpane{
+	margin-top:10px;
+	padding:10px;
+}
+ul li #homeButton{
+	border:none;
+	outline:none;
+	padding:0px;
+	margin:0px;
+	z-index:1;
+	background-color: inherit;
+	font-size:inherit;
+	color:inherit;
+	text-decoration:none;
+}
+#showpaneTitle{
+	font-size:40px;
+	text-align:center;	
+}
+</style>
+<script>
+
+function changeTitle(x){
+document.getElementById("showpaneTitle").innerHTML=x;
+}
+
+</script>
+</head>
+<body>
+<div class="toppane">
+	<b>Web Development Practicals</b>
+	<a href="mailto::abc@gmail.com"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/gmail.png" height="40px" height="40px"></a>
+	<a href="#"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/linkedin.png" height="40px" height="40px"></a>
+	<!--<a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
+	credit to author for png for icons-->
+	<!--<a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a>-->
+</div>
+<div class="navbar">
+<ul>
+	<li>
+	<a href="showpane.html" id="homeButton"	onclick="changeTitle('Home Page')" target="ansHere">&#9776 Home</a>
+	</li>
+	<li>Practical 1
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 1/first.html" 
+				onclick="changeTitle('Practical 1 Output')" target="ansHere">Output</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 1.html"
+				onclick="changeTitle('Practical 1 HTML Code')" target="ansHere">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+	<li>Practical 2
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 2/anchor tag.html"
+				onclick="changeTitle('Practical 2 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+
+	</li>
+	<li>Practical 3
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 3 and 4/text formatting.html"
+				onclick="changeTitle('Practical 3 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+	<li>Practical 4
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 3 and 4/text formatting.html" 
+				onclick="changeTitle('Practical 4 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+	<li>Practical 5
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/form.html" 
+				onclick="changeTitle('Practical 5 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+	<li>Practical 6
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/table.html" 
+					onclick="changeTitle('Practical 6(a) Output')" target="ansHere">Output a</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/table 2.html" 
+					onclick="changeTitle('Practical 6(b) Output')" target="ansHere">Output b</a>
+			<a href="#">Html Code 1</a>
+			<a href="#">Html Code 2</a>
+			<a href="#">Css Code 1</a>
+			<a href="#">Css Code 2</a>
+		</div>
+	</li>
+	<li>Practical 7
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 7/pseudo class and element selectors.html"
+				onclick="changeTitle('Practical 7 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+	<li>Practical 8
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/data structure/linked lists/linked_lists_1.c" 
+				onclick="changeTitle('Practical 8 Output')" target="ansHere">Output</a>
+			<a href="#">Html Code</a>
+			<a href="#">Css Code</a>
+		</div>
+	</li>
+</ul>
+</div>
+<br>
+<br>
+<br>
+
+<div class="showpane">
+<script src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/prism.js"></script>
+<p id="showpaneTitle"><b>Home Page</b></p>
+
+<iframe src="showpane.html" id="ansHere" name="ansHere" width="100%" height="1200px" style="z-index:2;">
+</iframe>
+
+</div>
+
+</body>
+</html>
