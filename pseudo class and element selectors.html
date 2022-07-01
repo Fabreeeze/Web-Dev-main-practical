@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS properties and selectors</title>
+<style>
+body{
+background-color:rgba(80,100,200,0.3);}
+
+
+::selection {
+  color: green;
+  background: yellow;
+ }
+ td:hover{
+box-shadow:0 6px 4px 4px rgba(0,0,0,0.4);;
+border-radius:20%;
+transform:translatey(20px);
+
+}
+
+th:hover{
+box-shadow:0 6px 8px 6px rgba(0,0,0,0.4);
+transform:translatey(50px);
+}
+
+.secondrow td:hover{
+background-color:rgba(0,150,80,0.5);}
+
+.thirdrow td:hover{
+background-color:rgba(0,180,250,0.5);}
+
+.fourthrow td:hover{
+background-color:rgba(150,180,250,0.5);
+border-radius:50%;}
+
+.fourthrow td a:link{
+color:green;}
+
+ .fourthrow td a:visited{
+color:brown;}
+
+.fourthrow td a:active{
+color:yellow;}
+
+.fourthrow td a:hover{
+color:pink;}
+
+#bigline:hover::first-line {
+  color: Brown;
+  font-size: xx-large;
+}
+#enlargen:hover::first-letter {
+  color: red;
+  font-size: xx-large;
+}
+#nodisplaycell:hover{
+background-color:inherit;;
+box-shadow:0 0 0 0;}
+
+</style>
+</head>
+<body>
+<b>
+<table cellspacing="2px" style=" font-size:20px; width:1500px; table-layout:fixed; text-align:center; height:700px;">
+	<tr>
+		<th colspan="18">Pseudo Class and Pseudo Element selectors</th>
+	</tr>
+	<tr class="secondrow">
+		<td colspan="6">The Pseudo-class CSS property of hover has been used
+		to show the 3-D jumping effects of the cells and the rounded edges at border of cell</td>
+		<td colspan="6">The use of contextual selectors has also been made to specify
+		different background colours</td>
+		<td colspan="6">In this Column, the use of pseudo elements has been done</td>	
+	</tr>
+	<tr class="thirdrow">
+		<td colspan="6">The following cells have pseudo class
+		property for anchor tag</td>
+		<td colspan="6" >
+		The anchor tag elements will have different colours for normal
+		active clicked and visited links</td>	
+		<td colspan="6" id="bigline">
+		The First Line will enlarge on hovering on this cell
+		<br>This Second line will not</td>		
+	</tr>
+	<tr class="fourthrow">
+		<td colspan="4"><a href="www.google.com">Link to google</a></td>
+		<td colspan="4"><a href="https://www.wikipedia.com">Link to wikipedia</a></td>
+		<td colspan="4"><a href="https://www.facebook.com">Link to facebook</a></td>
+		<td id="nodisplaycell"></td>
+		<td colspan="4" id="enlargen">Enlarge</td>
+	</tr>
+
+</table>
+</b>
+</body>
+</html>
