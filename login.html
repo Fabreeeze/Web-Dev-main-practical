@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log-In/Register</title>
+<style>
+#login{
+display:none;}
+ul{
+list-style:none;
+padding-left:100px;
+}
+ul li{
+	display:inline-block;
+	background-color:grey;
+	color:white;
+	font-size:30px;
+	float:left;
+	padding:19px;
+}
+ul li:hover{
+	background-color:#888;
+	color:black;
+	box-shadow:10px 10px 10px 10px;
+}
+#content{
+	margin-left:500px;
+	margin-top:80px;
+	height:600px;
+	width:500px;
+}
+#login,#register{
+	border:2px black solid;
+	background-color:#ccc;
+	font-size:30px;}
+form{
+margin:30px;
+padding:40px;}
+input{
+	font-size:30px;
+	height:60px;
+	width:350px;}
+#top{
+	float:right;
+	background-color:transparent;
+	font-size:70px;
+	margin-top:-50px;
+}
+</style>
+<script>
+function pageChange(x,y){
+	var e=document.getElementById(x);
+	e.style.display="none";
+	var e=document.getElementById(y);
+	e.style.display="block";
+}
+</script>
+
+</head>
+<body>
+<div id="top">
+	<b><a href="website.html">&#8658;</a></b>
+</div>
+<div id="content">
+	<ul>
+		<li><b><span style="cursor:pointer;" onclick="pageChange('register','login')">Log-in</span></b></li>
+		<li><b><span style="cursor:pointer;" onclick="pageChange('login','register')">Register</span></b></li>
+	</ul>
+	<br><br><br><br>
+	<div id="login">
+		<form id="logform" action="login_process.php" method="post">
+			<label for="uname0">Enter Email/Username</label><br><br>
+			<input type="text" id="uname0" name="uname0" placeholder="Enter your Email/username"><br><br>
+			
+			<label for="upass0">Enter your password</label><br><br>
+			<input type="password" id="upass0" name="upass0" placeholder="Enter password"><br>
+			
+			<p id="alertMessage1"></p><br>
+			
+			<input type="submit" id="submit" name="uSub" value="Login"><br><br>
+		</form>
+	</div>
+
+	<div id="register">
+		<form id="regform" method="post">
+			<label for="uname1">Enter Name</label><br>
+			<input type="text" id="uname1" name="uname1" placeholder="Enter your Name"><br><br>
+			
+			<label for="email">Enter Email</label><br>
+			<input type="email" id="email" name="email" placeholder="Enter your Email"><br><br>
+			
+			<label for="upass1">Enter your password</label><br>
+			<input type="password" id="upass1" name="upass1" placeholder="Enter password"><br><br>
+
+			<label for="Cpass1">Confirm your password</label><br>
+			<input type="password" id="Cpass1" name="Cpass1" placeholder="Confirm password"><br><br>
+					
+			<p id="alertMessage2"></p><br>
+			
+			<input type="submit" id="submit" value="cSub"value="Register"><br><br>
+		</form>
+	</div>
+</div>
+</body>
+</html>

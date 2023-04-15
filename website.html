@@ -3,46 +3,25 @@
 <head>
 <title>Web Dev Final</title>
 <meta charset="utf-8"/>
-
 <style>
 body{
-	
     background: linear-gradient(to bottom right, #13ccff 7%, #ff99cc 84%);
     background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 2s ease infinite;
-    -moz-animation: AnimationName 2s ease infinite;
-    -o-animation: AnimationName 2s ease infinite;
     animation: AnimationName 2s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:62% 0%}
-    50%{background-position:39% 100%}
-    100%{background-position:62% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:62% 0%}
-    50%{background-position:39% 100%}
-    100%{background-position:62% 0%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:62% 0%}
-    50%{background-position:39% 100%}
-    100%{background-position:62% 0%}
 }
 @keyframes AnimationName {
     0%{background-position:62% 0%}
     50%{background-position:39% 100%}
     100%{background-position:62% 0%}
 }
-
 #ansHere{
 background-color:white;}
 .toppane{
 	margin:10px;
 	padding:20px;
 	font-size:40px;
+	float:none;
+	text-align:center;
 }
 .toppane a{
 	float:right;
@@ -108,97 +87,165 @@ ul li #homeButton{
 	font-size:40px;
 	text-align:center;	
 }
+.p2{display:none;}
+#sidepane{
+	z-index:1000;
+	float:left;
+	display:none;
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	background-color: #ddd;
+	padding:30px;
+	overflow-x: hidden;
+	transition: 0.5s;
+	text-align:right;
+	box-shadow:4px 5px 4px 5px rgba(0,0,0,1);
+}
 </style>
 <script>
 
 function changeTitle(x){
-document.getElementById("showpaneTitle").innerHTML=x;
+	document.getElementById("showpaneTitle").innerHTML=x;
 }
-
+function nextpage(x,y){
+	var e=document.getElementsByClassName(x);
+	var i=0;
+	for(i=0;i<e.length;i++){
+		e[i].style.display="none";
+	}
+	var h=document.getElementsByClassName(y);
+	for(i=0;i<h.length;i++){
+		h[i].style.display="block";
+	}
+}
+function sidepaneView(x){
+	var e=document.getElementById("sidepane");
+	e.style.display=x;
+}
 </script>
 </head>
 <body>
+<span style="font-size:30px;cursor:pointer;" onclick="sidepaneView('block')">&#9776;</span>
+<div id="sidepane">
+<span style="font-size:50px;cursor:pointer;" onclick="sidepaneView('none')"><b>&times;</b></span>
+<h1>SIDE BAR<h1>
+<br>
+<br>
+<br>
+<br>
+<p id="sidepara"><a href="login.html">Log In page</a>
+</p>
+</div>
+
 <div class="toppane">
 	<b>Web Development Practicals</b>
-	<a href="mailto::abc@gmail.com"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/gmail.png" height="40px" height="40px"></a>
+	<a href="mailto::abc@gmail.com"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/gmail.png" 
+	height="40px" height="40px"></a>
 	<a href="#"><img src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/linkedin.png" height="40px" height="40px"></a>
-	<!--<a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
+	<!--<a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons 
+	created by Freepik - Flaticon</a>
 	credit to author for png for icons-->
-	<!--<a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a>-->
+	<!--<a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">
+	Gmail icons created by Freepik - Flaticon</a>-->
 </div>
+
 <div class="navbar">
 <ul>
 	<li>
-	<a href="showpane.html" id="homeButton"	onclick="changeTitle('Home Page')" target="ansHere">&#9776 Home</a>
+	<a href="showpane.html" id="homeButton"	onclick="changeTitle('Home Page')" target="ansHere"> Home</a>
 	</li>
-	<li>Practical 1
+	<li class="p1">Practical 1
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 1/first.html" 
 				onclick="changeTitle('Practical 1 Output')" target="ansHere">Output</a>
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 1.html"
 				onclick="changeTitle('Practical 1 HTML Code')" target="ansHere">Html Code</a>
-			<a href="#">Css Code</a>
 		</div>
 	</li>
-	<li>Practical 2
+	<li class="p1">Practical 2
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 2/anchor tag.html"
 				onclick="changeTitle('Practical 2 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 2.html"
+				onclick="changeTitle('Practical 2 HTML Code')" target="ansHere">Html Code</a>
 		</div>
 
 	</li>
-	<li>Practical 3
+	<li class="p1">Practical 3 and 4
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 3 and 4/text formatting.html"
 				onclick="changeTitle('Practical 3 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 3 and 4.html"
+				onclick="changeTitle('Practical 3 and 4 HTML Code')" target="ansHere">Html Code</a>
 		</div>
 	</li>
-	<li>Practical 4
-		<div class="navlist">
-			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 3 and 4/text formatting.html" 
-				onclick="changeTitle('Practical 4 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
-		</div>
-	</li>
-	<li>Practical 5
+	<li class="p1">Practical 5
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/form.html" 
 				onclick="changeTitle('Practical 5 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 5.html"
+				onclick="changeTitle('Practical 5 HTML Code')" target="ansHere">Html Code</a>
 		</div>
 	</li>
-	<li>Practical 6
+	<li class="p1">Practical 6
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/table.html" 
 					onclick="changeTitle('Practical 6(a) Output')" target="ansHere">Output a</a>
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 5 and 6/table 2.html" 
 					onclick="changeTitle('Practical 6(b) Output')" target="ansHere">Output b</a>
-			<a href="#">Html Code 1</a>
-			<a href="#">Html Code 2</a>
-			<a href="#">Css Code 1</a>
-			<a href="#">Css Code 2</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 6 a.html"
+				onclick="changeTitle('Practical 6A HTML Code')" target="ansHere">Html Code 1</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 6 b.html"
+				onclick="changeTitle('Practical 6B HTML Code')" target="ansHere">Html Code 2</a>
 		</div>
 	</li>
-	<li>Practical 7
+	<li class="p1">Practical 7
 		<div class="navlist">
 			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 7/pseudo class and element selectors.html"
 				onclick="changeTitle('Practical 7 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 7.html"
+				onclick="changeTitle('Practical 7 HTML Code')" target="ansHere">Html Code</a>
 		</div>
 	</li>
-	<li>Practical 8
+	<li class="p1">Practical 8
 		<div class="navlist">
-			<a href="file:///C:/Users/Hp/Desktop/data structure/linked lists/linked_lists_1.c" 
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 8/prac 8.html" 
 				onclick="changeTitle('Practical 8 Output')" target="ansHere">Output</a>
-			<a href="#">Html Code</a>
-			<a href="#">Css Code</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 8.html"
+				onclick="changeTitle('Practical 8 HTML Code')" target="ansHere">Html Code</a>
+		</div>
+	</li>
+	<li class="p1"><a href="#" onclick="nextpage('p1','p2')"> >>> </a>
+	</li>
+	<li class="p2"><a href="#" onclick="nextpage('p2','p1')"> <<< </a>
+	</li>
+	<li class="p2">Practical 9
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 9/prac 9.html" 
+				onclick="changeTitle('Practical 9 Output')" target="ansHere">Output</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 9.html"
+				onclick="changeTitle('Practical 9 HTML Code')" target="ansHere">Html Code</a>
+		</div>
+	</li>
+	<li class="p2">Practical 10-12
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 10/js functions.html" 
+				onclick="changeTitle('Practical 10-12 Output')" target="ansHere">Output</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 10 11 12.html"
+				onclick="changeTitle('Practical 10-12 HTML Code')" target="ansHere">Html Code</a>
+		</div>
+	</li>
+	<li class="p2">Practical 13-16
+		<div class="navlist">
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 13/prac13.html" 
+				onclick="changeTitle('Practical 13,14 and 16 Output')" target="ansHere">Output (13,14,16)</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 13.html"
+				onclick="changeTitle('Practical 13,14 and 16 HTML Code')" target="ansHere">Html Code (13,14,16)</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/prac 13/prac 13 b.html" 
+				onclick="changeTitle('Practical 15 Output')" target="ansHere">Output (15)</a>
+			<a href="file:///C:/Users/Hp/Desktop/web dev/class/main prac/html code/prac 13 b.html"
+				onclick="changeTitle('Practical 15 HTML Code')" target="ansHere">Html Code (15)</a>
 		</div>
 	</li>
 </ul>
@@ -206,15 +253,11 @@ document.getElementById("showpaneTitle").innerHTML=x;
 <br>
 <br>
 <br>
-
 <div class="showpane">
 <script src="file:///C:/Users/Hp/Desktop/web dev/class/main prac/prism.js"></script>
 <p id="showpaneTitle"><b>Home Page</b></p>
-
 <iframe src="showpane.html" id="ansHere" name="ansHere" width="100%" height="1200px" style="z-index:2;">
 </iframe>
-
 </div>
-
 </body>
 </html>
